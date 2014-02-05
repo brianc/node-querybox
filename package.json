@@ -1,0 +1,29 @@
+{
+  "name": "querybox",
+  "version": "0.0.0",
+  "description": "A box for your queries",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brianc/node-querybox"
+  },
+  "keywords": [
+    "query"
+  ],
+  "author": "Brian M. Carlson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brianc/node-querybox/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "pg-query": "~0.7.0",
+    "pg.js": "~2.11.1"
+  },
+  "dependencies": {
+    "glob": "~3.2.8"
+  }
+}
