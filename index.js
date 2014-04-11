@@ -30,8 +30,17 @@ Box.prototype.get = function(name) {
 
 Box.prototype.run = function(name, qValues, cb) {
   var qText = this.get(name)
-  if(!qText) return cb(new Error('Could not find named query file ' + name + '.sql'))
-  this.queryFn(qText, qValues, cb)
+  if(!qText) return cb(new Error('Could not find named query file ' + name + '.sql'));
+  if(typeof qValues == 'function') {
+    cb = qValues
+    qValues = null
+  }
+  var query = {
+    name: name,
+    text: qText,
+    values: qValues
+  }
+  this.queryFn(query, cb)
 }
 
 module.exports = function(path, queryFn) {

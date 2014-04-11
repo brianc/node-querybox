@@ -20,10 +20,10 @@
   },
   "devDependencies": {
     "mocha": "~1.17.1",
-    "pg-query": "~0.7.0",
-    "pg.js": "~2.11.1"
+    "pg-query": "0.8.0"
   },
   "dependencies": {
-    "glob": "~3.2.8"
+    "glob": "~3.2.8",
+    "pg.js": "*"
   }
 }
