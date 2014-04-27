@@ -21,11 +21,21 @@ describe('querybox', function() {
     })
   })
 
-  it('runs query with params', function(done) {
-    this.box.run('params', ['hi'], function(err, rows) {
-      if(err) return done(err);
-      assert.equal(rows[0].text, 'hi')
-      done()
+  describe('named query', function() {
+    it('runs query with params', function(done) {
+      this.box.run('params', ['hi'], function(err, rows) {
+        if(err) return done(err);
+        assert.equal(rows[0].text, 'hi')
+        done()
+      })
+    })
+
+    it('runs it again!', function(done) {
+      this.box.run('params', ['hi'], function(err, rows) {
+        if(err) return done(err);
+        assert.equal(rows[0].text, 'hi')
+        done()
+      })
     })
   })
 })
