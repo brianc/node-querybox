@@ -19,8 +19,9 @@
     "url": "https://github.com/brianc/node-querybox/issues"
   },
   "devDependencies": {
+    "async": "^2.6.0",
     "mocha": "~1.17.1",
-    "pg-query": "0.8.0",
+    "pg-query": "^0.11.0",
     "pg.js": "*",
     "okay": "^0.3.0"
   },
