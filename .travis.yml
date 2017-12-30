@@ -1,0 +1,15 @@
+language: node_js
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c 'create database node_querybox;' -U postgres -d postgres
+env:
+  - PGHOST='127.0.0.1' PGDATABASE='node_querybox' PGUSER='postgres'
+node_js:
+  - "4.0"
+  - "4.1"
+  - "5.0"
+  - "6.0"
+  - "7.0"
+  - "8.0"
+  - "9.0"
