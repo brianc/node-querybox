@@ -1,4 +1,4 @@
-# querybox
+# querybox [![Build Status](https://travis-ci.org/brianc/node-querybox.svg?branch=master)](https://travis-ci.org/brianc/node-querybox)
 
 A little helper to read a directory full of `.sql` files and execute them
 
