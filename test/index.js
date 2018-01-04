@@ -9,6 +9,10 @@ describe('querybox', function() {
     assert.equal(this.box.get('first'), 'SELECT now();\n')
   })
 
+  it('supports nested queries', function() {
+    assert.equal(this.box.get('nested/first'), 'SELECT 1;\n')
+  })
+
   it('returns false if query is missing', function() {
     assert.strictEqual(this.box.get('asdf'), false)
   })

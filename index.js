@@ -3,9 +3,13 @@ var path = require('path')
 var fs = require('fs')
 var util = require('util')
 
-var read = function(filePath) {
+var read = function(basePath, filePath) {
   var contents = fs.readFileSync(filePath, 'utf8')
-  var name = path.basename(filePath, '.sql')
+
+  var relativePath = path.relative(basePath, filePath)
+  var fileParts = path.parse(relativePath)
+  var name = path.join(fileParts.dir, fileParts.name)
+
   return {
     name: name,
     contents: contents
@@ -14,7 +18,7 @@ var read = function(filePath) {
 
 var readAll = function(path) {
   var files = glob.sync(path + '/**/*.sql')
-  return files.map(read)
+  return files.map(read.bind(null, path))
 }
 
 var Box = function(path, queryFn) {
